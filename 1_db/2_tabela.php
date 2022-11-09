@@ -13,8 +13,9 @@
         <th>Miasto</th>
         <th>Data utworzenia konta</th>
       </tr>
-      
+
       <?php
+        //tabela
         require_once("./scripts/1_connect.php");
         $sql = "SELECT * FROM `users` INNER JOIN `cities` ON `users`.`city_id`=`cities`.`id`;";
         $result = $conn->query($sql);
