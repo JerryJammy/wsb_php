@@ -7,6 +7,7 @@
   <body>
     <h3>Użytkownicy z tabeli</h3>
     <?php
+      //select command
       require_once("./scripts/1_connect.php");
       $sql = "SELECT * FROM `users`;";
       $result = $conn->query($sql);
