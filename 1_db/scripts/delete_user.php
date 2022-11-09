@@ -1,4 +1,5 @@
 <?php
+    //usuwanie usera
     session_start();
     if (!empty($_GET['userid'])){
         // echo $_GET['userid'];
