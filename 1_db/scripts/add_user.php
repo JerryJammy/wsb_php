@@ -1,4 +1,5 @@
 <?php
+    //dodawanie_usera
     session_start();
     if (isset($_POST)){
         foreach ($_POST as $value){
