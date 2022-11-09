@@ -1,5 +1,5 @@
-<?php 
-  session_start() 
+<?php
+  session_start()
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +24,9 @@
         <th>Miasto</th>
         <th>Data utworzenia konta</th>
       </tr>
-      
+
       <?php
+        //table update insert
         require_once("./scripts/1_connect.php");
         $sql = "SELECT `users`.`id`, `users`.`name`, `users`.`surname`, `users`.`created_at`, `cities`.`city` FROM `users` INNER JOIN `cities` ON `users`.`city_id`=`cities`.`id` ORDER BY id DESC;";
         $result = $conn->query($sql);
@@ -49,13 +50,13 @@
             <form action="./scripts/add_user.php" method="post">
             <select name="city_id">
             ADDUSER;
-            
+
             $sql="SELECT * FROM `cities`";
             $result=$conn->query($sql);
             while ($city=$result->fetch_assoc()){
               echo "<option value=\"$city[id]\">$city[city]</option>";
             }
-            
+
             echo <<< ADDUSER
               </select><br><br>
               <input type="text" name="name" placeholder="Podaj imie" value="Test"><br><br>
@@ -63,7 +64,7 @@
               <input type="submit" value="Dodaj użytkownika">
             </form>
             ADDUSER;
-            
+
           }else{
             echo '<a href="./4_tabela_insert.php?adduser=1">Dodawanie nowego użytkownika</a>';
           }
