@@ -1,5 +1,5 @@
-<?php 
-  session_start() 
+<?php
+  session_start()
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +24,9 @@
         <th>Miasto</th>
         <th>Data utworzenia konta</th>
       </tr>
-      
+
       <?php
+        //table delete
         require_once("./scripts/1_connect.php");
         $sql = "SELECT `users`.`id`, `users`.`name`, `users`.`surname`, `users`.`created_at`, `cities`.`city` FROM `users` INNER JOIN `cities` ON `users`.`city_id`=`cities`.`id`;";
         $result = $conn->query($sql);
